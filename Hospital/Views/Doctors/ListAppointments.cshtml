@@ -1,0 +1,29 @@
+﻿@model List<Patient> 
+
+@{
+    ViewData["Title"] = "Appointments List";
+}
+
+<h1>Appointments List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
+            <th>Doctor Name </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.Name</td>
+                <td>@patient.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                <td>@patient.AppointmentTime.ToString(@"hh\:mm")</td>
+                <td>@patient.doctor.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿ @model List<Hospital.Models.Doctor>
+ <h1>Book Appointment</h1>
+
+ <div class="row">
+
+     @foreach (var item in Model)
+     {
+         <div class="col-md-4 mb-4">
+             <div class="card">
+                 <img class="card-img" src="~/images/@item.Img" style="width: 100%; height: auto;" alt="Doctor Image">
+                 <div class="card-body">
+                     <h5 class="card-title">@item.Name</h5>
+                     <p class="card-text">Specialization: @item.Specialization</p>
+                     <a href="~/Doctors/CompleteAppointment?id=@item.Id" class="btn btn-primary">Book Appointment</a>
+
+                 </div>
+             </div>
+         </div>
+     }
+ </div>
+
+ 

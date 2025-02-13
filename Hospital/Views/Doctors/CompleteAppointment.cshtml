@@ -1,0 +1,28 @@
+﻿@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+@if (Model != null)
+{
+    <h1>Complete Appointment with @Model.Name</h1>
+
+    <form method="post" action="~/Doctors/AddAppointment">
+        <input type="hidden" name="doctorId" value="@Model.Id" />
+
+        <div class="form-group">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" class="form-control" id="patientName" name="name">
+        </div>
+        <div class="form-group">
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" class="form-control" id="appointmentDate" name="date">
+        </div>
+        <div class="form-group">
+            <label for="appointmentTime">Appointment Time:</label>
+            <input type="time" class="form-control" id="appointmentTime" name="time">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Complete Appointment</button>
+    </form>
+}
